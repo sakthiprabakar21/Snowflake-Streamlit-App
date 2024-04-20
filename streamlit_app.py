@@ -5,7 +5,7 @@ from snowflake.snowpark.functions import col
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 st.text(fruityvice_response)
-
+fv_dv = st.dataframe(data = fruityvice_response.json(),use_connection_width=True)
 
 
 # Write directly to the app
